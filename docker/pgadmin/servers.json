@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Quikbite Postgres",
+      "Group": "Servers",
+      "Host": "quikbite-postgres",
+      "Port": 5432,
+      "MaintenanceDB": "quikbitedb",
+      "Username": "quikbite",
+      "SSLMode": "prefer"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+	"servers": {
+		"firecrawl/firecrawl-mcp-server": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"-y",
+				"firecrawl-mcp@latest"
+			],
+			"env": {
+				"FIRECRAWL_API_KEY": "${input:api_key}"
+			},
+			"gallery": "https://api.mcp.github.com",
+			"version": "1.0.0"
+		},
+		"mysql": {
+			"type": "stdio",
+			"command": "/home/codespace/.python/current/bin/mcp-server-mysql",
+			"args": [],
+			"env": {
+				"MYSQL_HOST": "127.0.0.1",
+				"MYSQL_PORT": "3306",
+				"MYSQL_USER": "quikbite",
+				"MYSQL_PASSWORD": "quikbite",
+				"MYSQL_DATABASE": "quikbitedb"
+			}
+		},
+		"postgres": {
+			"type": "stdio",
+			"command": "postgres-mcp",
+			"args": ["--access-mode=unrestricted"],
+			"env": {
+				"DATABASE_URI": "postgresql://quikbite:quikbite@localhost:5432/quikbitedb"
+			}
+		}
+	},
+	"inputs": [
+		{
+			"id": "api_key",
+			"type": "promptString",
+			"description": "your API key",
+			"password": true
+		}
+	]
+}
