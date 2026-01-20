@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.quikbite.app.payment.model.Payment;
 import com.quikbite.app.response.Response;
 
 @ControllerAdvice// @ControllerAdvice annotation to handle exceptions globally
