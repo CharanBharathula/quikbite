@@ -63,7 +63,7 @@ public class RoleServiceImpl implements RoleService {
         Role updatedRole = roleRepository.save(existRole);
         return Response.<RoleDto>builder()
                 .statusCode(HttpStatus.OK.value())
-                .message("Role created successfully")
+                .message("Role updated successfully")
                 .data(modelMapper.map(updatedRole, RoleDto.class))
                 .build();
     }
