@@ -12,7 +12,7 @@ public class GlobalExceptionHandler {
 
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Response<?>> handleAllUnknownExceptions(Exception ex){
+    public ResponseEntity<Response<?>> handleGeneralException(Exception ex){
         Response<?> response = Response.builder()
                 .statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value())
                 .message(ex.getMessage())
@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<Response<?>> handleAllUnknownExceptions(NotFoundException ex){
+    public ResponseEntity<Response<?>> handleNotFoundException(NotFoundException ex){
         Response<?> response = Response.builder()
                 .statusCode(HttpStatus.NOT_FOUND.value())
                 .message(ex.getMessage())
@@ -30,7 +30,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(UnauthorizedException.class)
-    public ResponseEntity<Response<?>> handleAllUnknownExceptions(UnauthorizedException ex){
+    public ResponseEntity<Response<?>> handleUnauthorizedException(UnauthorizedException ex){
         Response<?> response = Response.builder()
                 .statusCode(HttpStatus.UNAUTHORIZED.value())
                 .message(ex.getMessage())
@@ -39,7 +39,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(BadRequestException.class)
-    public ResponseEntity<Response<?>> handleAllUnknownExceptions(BadRequestException ex){
+    public ResponseEntity<Response<?>> handleBadRequestException(BadRequestException ex){
         Response<?> response = Response.builder()
                 .statusCode(HttpStatus.BAD_REQUEST.value())
                 .message(ex.getMessage())
@@ -48,7 +48,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(PaymentProcessingException.class)
-    public ResponseEntity<Response<?>> handleAllUnknownExceptions(PaymentProcessingException ex){
+    public ResponseEntity<Response<?>> handlePaymentProcessingException(PaymentProcessingException ex){
         Response<?> response = Response.builder()
                 .statusCode(HttpStatus.BAD_GATEWAY.value())
                 .message(ex.getMessage())
@@ -57,7 +57,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
-    public ResponseEntity<Response<?>> handleAllUnknownExceptions(IllegalArgumentException ex){
+    public ResponseEntity<Response<?>> handleIllegalArgumentException(IllegalArgumentException ex){
         Response<?> response = Response.builder()
                 .statusCode(HttpStatus.BAD_REQUEST.value())
                 .message(ex.getMessage())
