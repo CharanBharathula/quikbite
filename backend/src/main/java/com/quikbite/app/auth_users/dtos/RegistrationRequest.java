@@ -22,7 +22,7 @@ public class RegistrationRequest {
     private String password;
     
     @NotBlank( message = "Phone number cannot be blank" )
-    @Size( min = 10, max = 10, message = "Phone number must 10 characters long" )
+    @Size( min = 10, max = 10, message = "Phone number must be 10 characters long" )
     private String phoneNumber;
 
     @NotBlank( message = "Address cannot be blank" )
