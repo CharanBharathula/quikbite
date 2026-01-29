@@ -40,3 +40,22 @@ Environment is pre-set to match the Docker Compose databases:
 - Postgres: `PGHOST=127.0.0.1`, `PGPORT=5432`, `PGUSER=quikbite`, `PGPASSWORD=quikbite`, `PGDATABASE=quikbitedb`
 - MySQL: `MYSQL_HOST=127.0.0.1`, `MYSQL_PORT=3306`, `MYSQL_USER=quikbite`, `MYSQL_PASSWORD=quikbite`, `MYSQL_DATABASE=quikbitedb`
 
+## GitHub Actions Workflows
+
+### Auto-Approve Pull Requests
+
+The repository includes a GitHub Actions workflow (`.github/workflows/auto-approve-prs.yml`) that automatically checks and approves pending pull requests based on specific criteria.
+
+**Auto-approval criteria:**
+- Pull requests from `dependabot[bot]`
+- Pull requests from `github-actions[bot]`
+- Pull requests from copilot agents
+- Pull requests with the `auto-approve` label
+
+**Workflow triggers:**
+- When a pull request is opened, reopened, or updated
+- Every 6 hours via scheduled cron job
+- Manual trigger via workflow dispatch
+
+The workflow will automatically approve eligible PRs that haven't been approved yet, helping to streamline the review process for automated and trusted contributions.
+
