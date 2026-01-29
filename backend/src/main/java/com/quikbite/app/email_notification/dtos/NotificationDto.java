@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.quikbite.app.enums.NotificationType;
-import jakarta.persistence.Lob;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
 import lombok.Data;
@@ -22,7 +21,6 @@ public class NotificationDto {
     @NotBlank(message = "Recepient is required")
     private String recepient;
 
-    @Lob // @Lob is used to store large objects in the database, such as large text or binary data.
     private String body;
 
     private NotificationType notificationType;
