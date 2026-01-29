@@ -33,7 +33,7 @@ public class SecurityFilter {
         httpSecurity.csrf(csrf -> csrf.disable()) // Disable CSRF protection for stateless APIs (such as REST APIs)
         .cors(Customizer.withDefaults()) // Enable CORS with default settings which means allowing cross-origin requests such as requests from different domains
         .exceptionHandling( ex -> ex.accessDeniedHandler(customAccessDeniedHandler).authenticationEntryPoint(customAuthenticationEntryPoint) ) // Configure custom handlers for authentication and access denied exceptions
-        .authorizeHttpRequests( req -> req.requestMatchers("/api/auth/**", "/api/categories/**","/api/menu/**", "/api/reviews/**").permitAll().anyRequest().authenticated() ) // Define authorization rules for HTTP requests
+        .authorizeHttpRequests( req -> req.requestMatchers("/api/auth/**", "/api/categories/**","/api/menu/**", "/api/reviews/**","/api/roles/**").permitAll().anyRequest().authenticated() ) // Define authorization rules for HTTP requests
         .sessionManagement(mag -> mag.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Set session management to stateless which means no session will be created or used by Spring Security
         .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
         return httpSecurity.build();
