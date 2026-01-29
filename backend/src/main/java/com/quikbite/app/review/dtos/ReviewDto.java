@@ -28,7 +28,7 @@ public class ReviewDto {
     @Max(value = 10, message = "Rating must be at most 10")
     private Integer rating;
 
-    @Size(max = 500, message = "Comment cannot exceed 1000 characters")
+    @Size(max = 500, message = "Comment cannot exceed 500 characters")
     private String comment;
 
     private String menuName;
